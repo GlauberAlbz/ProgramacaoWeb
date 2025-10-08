@@ -1,17 +1,29 @@
+import { filmes } from "../data/filmes.js"
+
 function Home () {
+    console.log(filmes)
+
+    const primeiroFilme = filmes[5]
+    const estiloImagem = {
+            width: "300px"
+    };
+
     return <>  
         <h1>Filmes</h1>
 
-        <p>Interestelar</p>
-        <p>2001: Uma Odisseia no Espaço</p>
-        <p>Gravidade</p>
-        <p>Perdido em Marte</p>
-        <p>Ad Astra - Rumo às Estrelas</p>
-        <p>Contato</p>
-        <p>A Chegada</p>
-        <p>Passageiro Acidental </p>
-        <p>Lunar</p>
-        <p>Apollo 13: Do Desastre ao Triunfo</p>
+        <ul>
+            <li>
+                <p>Nome do filme:</p>
+
+                <p>{ primeiroFilme.titulo }</p>
+                <p>{ primeiroFilme.ano }</p>
+                <p>{ primeiroFilme.genero }</p>
+                <p>{ primeiroFilme.nota }</p>
+
+                <img style={estiloImagem} src={primeiroFilme.poster}/>
+            </li>
+        </ul>
+
         </>
 }
 
